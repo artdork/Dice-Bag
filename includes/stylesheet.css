@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+	}
+
+#page {
+	background: url(../images/appbg1.jpg) top no-repeat;
+	}
+
+#content li {
+	background: none;
+	}
+
+#footer {
+	height: 35px;
+	position: absolute;
+	bottom: 0px;
+	padding-bottom: .5em;
+	}
+
+.die {
+	border-spacing: 0;
+	position: absolute;
+    margin-left: 100px;
+    margin-top: 450px;
+	}
+
+.diespin {
+	transform:rotate(-30deg);
+	-webkit-transform:rotate(-30deg);
+    animation: rotate 0.5s;
+	-webkit-animation: rotate 0.5s;
+    }
+
+@keyframes rotate
+{
+from {    
+	transform:rotate(100deg);
+	-webkit-transform:rotate(100deg); 
+	}
+to {
+    transform:rotate(-30deg);
+	-webkit-transform:rotate(-30deg);
+	}
+}
+
+@-webkit-keyframes rotate
+{
+from {
+	transform:rotate(100deg);
+	-webkit-transform:rotate(100deg);
+	}
+to {
+	transform:rotate(-30deg);
+	-webkit-transform:rotate(-30deg);
+	}
+}
