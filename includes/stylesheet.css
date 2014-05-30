@@ -4,59 +4,43 @@
 body {
 	margin: 0;
 	padding: 0;
-	}
-
+}
 #page {
-	background: url(../images/appbg1.jpg) top no-repeat;
-	}
-
-#content li {
-	background: none;
-	}
-
+	height: 100%;
+	min-width: 100%;
+	margin: 0;
+	background: url(../images/appbg1.jpg) 0 0 repeat-x;
+}
+#content {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
 #footer {
-	height: 35px;
 	position: absolute;
 	bottom: 0;
-	padding-bottom: .5em;
-	}
+	width: 100%;
+	text-align: center;
+	height: 20px;
+	padding: 0.3em 0;
+	background: #F5F5F5;
+	z-index: 99;
+	border-top: 1px solid #999;
+}
+#footer h4 {
+	text-align: center;
+}
+#header {
+	z-index: 99;
+	border-bottom: 1px solid #999;
+	margin: 0;
+	padding: 0;
+}
 
 /* Starting position of die below main screen */
 .die {
 	border-spacing: 0;
 	position: absolute;
-    margin-left: 100px;
+    margin-left: 120px;
     margin-top: 450px;
 	}
-
-/* Class added to spin die */
-.diespin {
-	transform:rotate(-30deg);
-	-webkit-transform:rotate(-30deg);
-    animation: rotate 0.5s;
-	-webkit-animation: rotate 0.5s;
-    }
-
-@keyframes rotate
-{
-from {    
-	transform:rotate(100deg);
-	-webkit-transform:rotate(100deg); 
-	}
-to {
-    transform:rotate(-30deg);
-	-webkit-transform:rotate(-30deg);
-	}
-}
-
-@-webkit-keyframes rotate
-{
-from {
-	transform:rotate(100deg);
-	-webkit-transform:rotate(100deg);
-	}
-to {
-	transform:rotate(-30deg);
-	-webkit-transform:rotate(-30deg);
-	}
-}
