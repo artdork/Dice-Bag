@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.example.app"
+        version     = "0.0.1" >
+
+    <name>Dice Bag</name>
+
+    <description>
+        A simple dice rolling app. 
+    </description>
+
+    <author href="http://www.kristinbhenson.com" email="hello@kristinbhenson.com">
+        Kristin Henson
+    </author>
+
+</widget>
