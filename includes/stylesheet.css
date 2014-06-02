@@ -9,7 +9,7 @@ body {
 	height: 100%;
 	min-width: 100%;
 	margin: 0;
-	background: url(../images/appbg1.jpg) 0 0 repeat-x;
+	background: url(../images/gridme.png) 0 0;
 }
 #content {
 	margin: 0;
@@ -35,8 +35,11 @@ body {
 	border-bottom: 1px solid #999;
 	margin: 0;
 	padding: 0;
+	background: #F5F5F5;
 }
-
+.btn1 {
+	padding: 1px 4px;
+}
 /* Starting position of die below main screen */
 .die {
 	border-spacing: 0;

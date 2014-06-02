@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$('.die').addClass('rot').rotate({
             duration: 400,
             angle: 0,
-            animateTo: giveMeRandom(180, 1350)});
+            animateTo: giveMeRandom(110, 1380)});
   })
 
 });
