@@ -4,10 +4,6 @@ function giveMeRandom(maxNum, floor) {
 	return (Math.floor(Math.random() * maxNum) + floor);
 }
 
-function rollDie() {
-	$('.die').html('<img src="images/6sideddie' + giveMeRandom(6, 1) + '.png"> '); 
-};
-
     	
 
 //Moves image to the screen 

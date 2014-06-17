@@ -3,6 +3,11 @@
 //josh.karli@gmail.com
 //DLRNG version 0.1
 
+function rollDie() {
+	$('.die').html('<img src="images/6sideddie' + giveMeRandom(6, 1) + '.png"> '); 
+};
+
+
 //DEBUGGING VARS - COMMENT THESE OUT FOR NORMAL OPERATION
 var rollNumber = 1;
 
