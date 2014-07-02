@@ -22,11 +22,12 @@
 <!-- DLRNG include-->
 <script src="includes/dlrng.js" type="text/javascript"></script>
 
-<!--CODE NOT YET FUNCTIONAL - load DLRNG data & settings upon first load-->
+<!--CODE NOT YET FUNCTIONAL - load session list and data & settings upon first load-->
 <script>
     $(document).on('pageshow', '#myPage', function () { //$ is shorthand for jQuery, which must be used in html
         setTimeout(function () {
             $.mobile.changePage('#dialog');
+            readData(null); //loads session data, settings
         }, 100); //delay above zero
     });
 </script>

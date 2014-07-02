@@ -1,7 +1,12 @@
-// JavaScript Document
+/* 
+JavaScript Document
+Note: All code related to the random number generator which is not found
+in index.html can be found in dlrng.js. All other JS can be found in this document.
+*/
 
-function giveMeRandom(maxNum, floor) {
-	return (Math.floor(Math.random() * maxNum) + floor);
+//dice roll has been triggered
+function rollDie() {
+	$('.die').html('<img src="images/6sideddie' + giveMeRandom(6, 1) + '.png"> '); 
 }
 
     	
