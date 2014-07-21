@@ -24,20 +24,25 @@ $(document).ready(function() {
 		  $(this).removeClass('tapped');
 	  }
 	  $('.die').removeAttr('style');
+	  $('.toggle')
+	.html('<img src="images/' + dieSides() + 'sided' + dieSides() + '.png" />');
+
+
   })  
 });
 
 function rollDie() {
 	$('.die')
-	.html('<img src="images/' + dieSides() + 'sided' + giveMeRandom((dieSides()), 1) + '.png" />')
-	.removeAttr('style')
-	.animate({ 
-       bottom: giveMeRandom(275, 60) + 'px',
-       left: giveMeRandom(190, -100) + 'px',
-     }, 400)
-	.addClass('rot').rotate({
+		.html('<img src="images/' + dieSides() + 'sided' + giveMeRandom((dieSides()), 1) + '.png" />')
+		.removeAttr('style')
+		.animate({ 
+       		bottom: giveMeRandom(275, 60) + 'px',
+       		left: giveMeRandom(190, -100) + 'px',
+     	}, 400)
+		.addClass('rot').rotate({
             duration: 400,
             angle: 0,
-            animateTo: giveMeRandom(110, 1020)});
-
+            animateTo: giveMeRandom(110, 1020)
+		});
+			
 };
