@@ -25,9 +25,12 @@
 <!-- Main app screen -->
 <div data-role="page" id="page">
     <div id="header" data-role="header">
-          <div class="changeDie">
+          <div class="changeTypeOfDie">
           	 <button class="toggle"><img src="images/6sided6.png" /></button>
              <ul class="dieTypes">
+            	<li>
+                	<button value="3"><img src="images/3sided3.png" /></button>
+                </li>
             	<li>
                 	<button value="4"><img src="images/4sided4.png" /></button>
                 </li>
@@ -48,12 +51,35 @@
                 </li>
              </ul>
           </div>
+          <div class="changeHowManyDice">
+          	 <button class="toggle">1</button>
+             <ul class="numberOfDice">
+            	<li>
+                	<button value="1">1</button>
+                </li>
+            	<li>
+                	<button value="2">2</button>
+                </li>
+            	<li>
+                	<button value="3">3</button>
+                </li>
+            	<li>
+                	<button value="4">4</button>
+                </li>
+                <li>
+                	<button value="5">5</button>
+                </li>
+                <li>
+                	<button value="6">6</button>
+                </li>
+             </ul>
+          </div>
           <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Dice Bag</h1>
-          <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-nosvg ui-icon-grid ui-btn-corner-all ui-shadow" title=" Navigation " data-form="ui-icon" href="#page2"> </a>
+          <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-nosvg ui-icon-chart ui-btn-corner-all ui-shadow" title="Charts" data-form="ui-icon" href="#page2"> </a>
 	</div>
 
 	<div data-role="content" id="content">	
-          <div class="die">
+          <div class="dieimage">
           </div>		
     </div>
     

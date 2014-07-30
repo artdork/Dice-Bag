@@ -41,6 +41,7 @@ body {
 	padding: 0;
 	background: #F5F5F5;
 	position: absolute;
+	overflow: visible;
 }
 .ui-header h1.ui-title {
 	margin: .5em 90px;
@@ -49,20 +50,31 @@ body {
 	padding: 1px 4px;
 }
 /* Starting position of die below main screen */
-.die {
+.dieimage {
 	border-spacing: 0;
 	position: absolute;
-    margin-left: 120px;
-    margin-top: 450px;
+    left: 100px;
+    bottom: -300px;
 }
-.changeDie {
-	display: block;
-	position: fixed;
+.die {
+	width: 80px;
+	height: 80px;
+}
+.changeTypeOfDie {
+	display: inline-block;
 	z-index: 3;
+	position: absolute;
 	top: 4px;
-	left: 7px;
+	left: 5px;
 }
-.changeDie img {
+.changeHowManyDice {
+	display: inline-block;
+	z-index: 3;
+	position: absolute;
+	top: 4px;
+	left: 40px;
+}
+.changeTypeOfDie img {
 	width: 100%;
 }
 .toggle {
@@ -72,11 +84,13 @@ body {
 	height: 30px;
 	transition: .5s ease all;
 }
-ul.dieTypes {
+ul.dieTypes,
+ul.numberOfDice {
 	padding: 0px;
 	margin: 31px 0 0 0;
 }
-ul.dieTypes li {
+ul.dieTypes li,
+ul.numberOfDice li {
 	list-style: none;
 	display: block;
 	float: left;
@@ -86,11 +100,13 @@ ul.dieTypes li {
 	transition: .5s ease all;
 	clear: left;
 }
-.changeDie.tapped ul.dieTypes li {
+.changeTypeOfDie.tapped ul.dieTypes li,
+.changeHowManyDice.tapped ul.numberOfDice li {
 	height: 30px;
 	width: 30px;
 }
-.changeDie ul.dieTypes li button {
+.changeTypeOfDie ul.dieTypes li button,
+.changeHowManyDice ul.numberOfDice li button {
 	height: 30px;
 	width: 30px;
 }
