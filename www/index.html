@@ -6,30 +6,28 @@
 <title>Dice Bag</title>
 
 <!-- CSS Includes -->
-<link href="includes/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
-<link href="includes/stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="themes/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="themes/theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/theme.min.css" rel="stylesheet" type="text/css"/>
 <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 <!-- Javascript Includes -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-<script src="includes/script.js" type="text/javascript">
-</script>
+<script src="js/script.js" type="text/javascript"></script>
 <script src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js" type="text/javascript"></script>
-
-<!-- DLRNG include-->
-<script src="includes/dlrng.js" type="text/javascript"></script>
+<script src="js/dlrng.js" type="text/javascript"></script>
 
 <!--CODE NOT YET FUNCTIONAL - load session list and data & settings upon first load-->
 <script>
-    $(document).on('pageshow', '#myPage', function () { //$ is shorthand for jQuery, which must be used in html
+/*    $(document).on('pageshow', '#myPage', function () { //$ is shorthand for jQuery, which must be used in html
         setTimeout(function () {
             $.mobile.changePage('#dialog');
-            readData(null); //loads session data, settings
+            readData(null); //loads session list, settings
         }, 100); //delay above zero
     });
+*/
 </script>
 
 
