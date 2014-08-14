@@ -1,11 +1,12 @@
 // JavaScript Document
-var maxSearchIterations = 10;
+var maxSearchIterations = 1000;
 var min_x = -100;
 var max_x = 110;
 var min_y = 340;
-var max_y = 680;
+var max_y = 670;
 var filled_areas = [];
 var howManyToRoll;
+var obj = document.createElement("audio");   
 
 
 function giveMeRandom(maxNum, floor) {
@@ -81,7 +82,9 @@ $(document).ready(function() {
 	  $('.changeHowManyDice .toggle')
 	.html( howManyDice() );
   });
-  
+	obj.setAttribute('src','sound_diceroll.wav');
+	 $.get(); 
+
 });
 
 function rollDie() {
@@ -94,11 +97,18 @@ function rollDie() {
 			})
 	});
 	randomize();
+    obj.play(); 
 };
 
 function calc_overlap(a1) {
     var overlap = 0;
-    for (i = 0; i < filled_areas.length; i++) {
+/*	var a1 = new Object();
+	a1.height = 100;
+	a1.width = 100;
+	var a2 = new Object();
+	a2.height = 100;
+	a2.width = 100;
+*/    for (i = 0; i < filled_areas.length; i++) {
 
         var a2 = filled_areas[i];
 
@@ -142,7 +152,7 @@ function randomize() {
         var rand_x = 0;
         var rand_y = 0;
         var i = 0;
-        var smallest_overlap = 99999;
+        var smallest_overlap = 50;
         var best_choice;
         var area;
         for (i = 0; i < maxSearchIterations; i++) {
@@ -151,8 +161,8 @@ function randomize() {
             area = {
                 x: rand_x,
                 y: rand_y,
-                width: 160,
-                height: 160
+                width: 80,
+                height: 80
             };
             var overlap = calc_overlap(area);
             if (overlap < smallest_overlap) {
