@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dice-bag.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value=".25" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="Compass">
+        <param name="ios-package" value="CDVCompass" />
+    </feature>
+    <name>Dice Bag</name>
+    <description>
+		A simple dice rolling app made for tabletop gamers.
+	</description>
+    <author email="hello@kristinbhenson.com" href="http://www.kristinbhenson.com">
+		Kristin Henson
+	</author>
+    <icon src="/icon.png" />
+    <icon gap:platform="ios" height="60" src="res/icon/ios/icon-60.png" width="60" />
+    <icon gap:platform="ios" height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+    <icon gap:platform="ios" height="76" src="res/icon/ios/icon-76.png" width="76" />
+    <icon gap:platform="ios" height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
+    <icon gap:platform="ios" height="29" src="res/icon/ios/icon-small.png" width="29" />
+    <icon gap:platform="ios" height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
+    <icon gap:platform="ios" height="40" src="res/icon/ios/icon-40.png" width="40" />
+    <icon gap:platform="ios" height="80" src="res/icon/ios/icon-40@2x.png" width="80" />
+</widget>
