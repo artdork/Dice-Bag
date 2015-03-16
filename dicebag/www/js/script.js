@@ -51,15 +51,45 @@ function rollThisMany() {
 function dieTypeImage() {
 	return ('<img class="die" src="images/' + dieSides() + 'sided' + giveMeRandom((dieSides()), 1) + '.png" />');
 }
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.accelerometer);
+}
 
-$(document).ready(function() {
- $('.changeTypeOfDie').click(function() {
+$(document).ready(function () {
+	var watchId = 0;
+	$('#btnWatch').bind('touchstart', function () {
+		if ( watchId == 0 ) {
+			watchId = navigator.accelerometer.watchAcceleration( 
+				function ( acceleration ) {
+					$('#txtX').attr('value', acceleration.x);
+					$('#txtY').attr('value', acceleration.y);
+					$('#txtZ').attr('value', acceleration.z);
+					$('#btnWatch').html('Stop Watching');
+					if ( (acceleration.z < -1) && (acceleration.y < -1) ) {
+						rollDie();
+					}
+				},
+				function ( error ) {
+					console.log('Error');
+				}, {
+					frequency: 100
+			});
+		} else {
+			navigator.accelerometer.clearWatch( watchId );
+			$('#btnWatch').html('Start Watching');
+			watchId = 0;
+		}
+	});
+	
+  $('.changeTypeOfDie > div > span > .ui-btn-text').html('<img src="images/6sided6.png" />');
+  $('.changeTypeOfDie').click(function() {
 	  $(this).toggleClass('tapped');
   });
   
- $('.changeHowManyDice').click(function() {
+  $('.changeHowManyDice').click(function() {
 	  $(this).toggleClass('tapped');
- });
+  });
   
   $('ul.dieTypes li button').click(function() {
 	  $('.typeselected').removeClass('typeselected');
@@ -68,8 +98,8 @@ $(document).ready(function() {
 		  $(this).removeClass('tapped');
 	  }
 	  $('.die').removeAttr('style');
-	  $('.changeTypeOfDie .toggle')
-	.html('<img src="images/' + dieSides() + 'sided' + dieSides() + '.png" />');
+	  $('.changeTypeOfDie > div > span > .ui-btn-text').html('<img src="images/' + dieSides() + 'sided' + dieSides() + '.png" />');
+	  $('.changeTypeOfDie .toggle').html('<img src="images/' + dieSides() + 'sided' + dieSides() + '.png" />');
   });
   
   $('ul.numberOfDice li button').click(function() {
@@ -78,12 +108,19 @@ $(document).ready(function() {
 	  if ( $('.changeHowManyDice').hasClass('tapped') ) {
 		  $(this).removeClass('tapped');
 	  }
+	  var newNumberOfDice = $(this).attr('value');
 	  $('.die').removeAttr('style');
-	  $('.changeHowManyDice .toggle')
-	.html( howManyDice() );
+	  $('.changeHowManyDice > div > span > .ui-btn-text').html( newNumberOfDice );
+	  $('.changeHowManyDice .toggle').html( newNumberOfDice );
   });
+  
 	obj.setAttribute('src','sound_diceroll.wav');
-	 $.get(); 
+	 $.get();
+	  
+	$('.changeTypeOfDie li').each(function() {
+    	var dieImage = $(this).find('button').html();
+    	$(this).find('.ui-btn-text').html(dieImage);
+	});
 
 });
 
@@ -93,7 +130,7 @@ function rollDie() {
 		$(this).removeAttr('style').addClass('rot').rotate({
             duration: giveMeRandom(0, 550),
             angle: 0,
-            animateTo: giveMeRandom(110, 1020)
+            animateTo: giveMeRandom(110, 1000)
 			})
 	});
 	randomize();
@@ -133,13 +170,8 @@ function calc_overlap(a1) {
         var y2 = Math.min(a1.y + a1.height, a2.y + a2.height);
 
         var intersection = ((x1 - x2) * (y1 - y2));
-
         overlap += intersection;
-
-        // console.log("( "+x1+" - "+x2+" ) * ( "+y1+" - "+y2+" ) = " + intersection);
     }
-
-    // console.log("overlap = " + overlap + " on " + filled_areas.length + " filled areas ");
     return overlap;
 }
 
@@ -184,8 +216,6 @@ function randomize() {
             left: rand_x,
             bottom: rand_y
         });
-
-        console.log("and the winner is : " + smallest_overlap);
     });
     return false;
 }

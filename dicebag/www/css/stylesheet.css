@@ -1,9 +1,15 @@
 @charset "UTF-8";
 /* CSS Document */
+
+@font-face {
+    font-family: "Questrial";
+    src: url("Questrial-Regular.ttf") format("opentype");   
+}
 * {
 	position: relative;
 }
 body {
+    font-family: "Questrial";
 	margin: 0;
 	padding: 0;
 }
@@ -35,6 +41,9 @@ body {
 #footer h4 {
 	text-align: center;
 }
+.ui-footer .ui-btn {
+	vertical-align: middle;
+}
 #header {
 	z-index: 99;
 	border-bottom: 1px solid #999;
@@ -46,10 +55,12 @@ body {
 }
 .ui-header h1.ui-title {
 	font-size: 18px;
+	padding-top: 15px;
 }
 .btn1 {
 	padding: 5px 12px;
 }
+
 /* Starting position of die below main screen */
 .dieimage {
 	border-spacing: 0;
@@ -61,26 +72,30 @@ body {
 	width: 80px;
 	height: 80px;
 }
+
 .changeTypeOfDie {
 	display: inline-block;
 	z-index: 3;
 	position: absolute;
-	top: 6px;
+	top: 18px;
 	left: 10px;
+	width: 35px;
+	height: 35px;
 }
 .changeHowManyDice {
 	display: inline-block;
 	z-index: 3;
 	position: absolute;
-	top: 6px;
-	left: 50px;
+	top: 18px;
+	left: 51px;
+	width: 35px;
+	height: 35px;
 }
 .changeTypeOfDie img {
 	width: 100%;
 }
 .toggle {
 	display: block;
-	float: left;
 	width: 35px;
 	height: 35px;
 	transition: .5s ease all;
@@ -88,7 +103,7 @@ body {
 ul.dieTypes,
 ul.numberOfDice {
 	padding: 0px;
-	margin: 31px 0 0 0;
+	margin: 0;
 }
 ul.dieTypes li,
 ul.numberOfDice li {
@@ -104,11 +119,25 @@ ul.numberOfDice li {
 .changeHowManyDice.tapped ul.numberOfDice li,
 .changeTypeOfDie ul.dieTypes li button,
 .changeHowManyDice ul.numberOfDice li button {
-	height: 35px;
-	width: 35px;
+	height: 37px;
+	width: 36px;
 }
 a.ui-btn.ui-icon-chart {
 	border-radius: 50%;
 	height: 35px;
 	width: 35px;
+	top: 19px;
+}
+.ui-header .ui-btn-inner {
+	padding-top: .6em;
+}
+.changeTypeOfDie .ui-btn,
+.changeHowManyDice .ui-btn {
+	width: 35px;
+	height: 35px;
+	padding-top: .1em;
+	vertical-align:top;
+}
+.changeTypeOfDie .ui-btn-inner {
+	padding: 1px 3px 3px;
 }
